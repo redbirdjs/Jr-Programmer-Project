@@ -33,16 +33,19 @@ public class MainManager : MonoBehaviour
 
         string json = JsonUtility.ToJson(data);
 
-        File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
+        File.WriteAllText(Application.dataPath + "/savefile.json", json);
+
+        Debug.Log(Application.dataPath);
     }
 
     public void LoadColor() {
-        string path = Application.persistentDataPath + "savefile.json";
+        string path = Application.dataPath + "/savefile.json";
         if (File.Exists(path)) {
             string json = File.ReadAllText(path);
             SaveData data = JsonUtility.FromJson<SaveData>(json);
 
             TeamColor = data.TeamColor;
+            Debug.Log("File read!");
         }
     }
 }
