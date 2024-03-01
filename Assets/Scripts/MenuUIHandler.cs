@@ -15,7 +15,7 @@ public class MenuUIHandler : MonoBehaviour
     {
         // add code here to handle when a color is selected
     }
-    
+
     private void Start()
     {
         ColorPicker.Init();
@@ -25,5 +25,9 @@ public class MenuUIHandler : MonoBehaviour
 
     public void StartNew() {
         SceneManager.LoadScene(1);
+    }
+
+    public void Exit() {
+        Application.Quit();
     }
 }
